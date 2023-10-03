@@ -1,0 +1,42 @@
+﻿@page "/Index"
+
+<PageTitle>Index</PageTitle>
+
+<Titulo Texto="@Nome"></Titulo>
+<p style="@meuStilo">@h</p>
+
+<h3 class="text-success">@mais</h3>
+
+Este app e apenas para teste.
+
+<input @bind-value="Novo" />
+
+<button @onclick="Muda">Mudar</button>
+
+<div>
+    <label>Escrva uma palavra:</label> <br />
+    <input @bind-value="mais"/>
+</div>
+
+
+
+@code{
+    string Nome = "Bem-vindo!";
+
+    string Novo;
+
+    string mais;
+
+    string minhaClasse = "";
+
+    string meuStilo = "";
+
+    DateTime h = DateTime.MinValue;
+
+    void Muda()
+    {
+        Nome = Novo;
+        minhaClasse = "text-success";
+        meuStilo = "font-size: 3rem";
+    }
+}
